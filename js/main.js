@@ -7,7 +7,6 @@ const HAPPY_FACE = '😃'
 const SAD_FACE = '🤯'
 const COOL_FACE = '😎'
 
-var gBoard
 var gLevel = {
     SIZE: 4,
     MINES: 2
@@ -18,7 +17,9 @@ var gGame = {
     markedCount: 0,
     second: 0
 }
-var gTimer
+
+var gBoard
+var gTimer 
 var gFirstTurn
 
 function initGame() {
@@ -26,10 +27,13 @@ function initGame() {
     renderBoard(gBoard)
     displayNumOfMinesLeft()
     displayCurrentStatus(HAPPY_FACE)
+    clearInterval(gTimer)
+    
+    
     gFirstTurn = true
 }
 
-function setRandomMines(forbiddenCell) {
+function setRandomMines(forbiddenCell) { 
     for (var i = 0; i < gLevel.MINES; i++) {
         const pos = drawEmptyCell()
         if (pos.i === forbiddenCell.i && pos.j === forbiddenCell.j) {
@@ -110,6 +114,8 @@ function setTimer() {
     // console.log(gGame.second)
     gGame.second++
     elTimer.innerText = `${gGame.second}`
+    
+   
 
 }
 
@@ -131,6 +137,9 @@ function checkGameOver() {
         clearInterval(gTimer)
         displayCurrentStatus(COOL_FACE)
     }
+    // if( gTimer === 1000 ){
+    //     gGame.isOn = false
+    // }
 }
 
 function loseCase(elCell) {
@@ -202,24 +211,24 @@ function restartGame() {
 
 
 
-function winCase() {
-    var flagOnMine = 0
+// function winCase() {
+//     var flagOnMine = 0
 
-    for (var i = 0; i < gBoard.length; i++) {
-        if (gBoard[i].classList.contians('🚩') && gBoard[i].classList.contians('💣') ) {
+//     for (var i = 0; i < gBoard.length; i++) {
+//         if (gBoard[i].classList.contians('🚩') && gBoard[i].classList.contians('💣') ) {
           
-            flagOnMine ++
+//             flagOnMine ++
     
-        }
+//         }
 
-if (flagOnMine === gLevel.MINES)
-    gGame.isOn = false
-    clearInterval(gTimer)
-    displayCurrentStatus(COOL_FACE)
+// if (flagOnMine === gLevel.MINES)
+//     gGame.isOn = false
+//     clearInterval(gTimer)
+//     displayCurrentStatus(COOL_FACE)
 
-    }
+//     }
 
-}
+// }
 
 
 // const countDown = setInterval (()=>{

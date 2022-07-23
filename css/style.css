@@ -27,7 +27,7 @@ div {
     width: 500px;
     height: 550px;
     border-radius: 5px;
-    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    /* background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
 
 }
 
@@ -37,14 +37,15 @@ div {
 
     width: 30px;
     height: 30px;
-    box-shadow: 0.2px 0.2px 5px rgb(223, 223, 231);
+        background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+
 
 }
 
 
 .cell:hover {
     cursor: pointer;
-    background-color: rgb(77, 133, 147, 0.9);
+    background-color: rgba(128, 27, 217);
 
 }
 
